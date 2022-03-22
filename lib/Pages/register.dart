@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -22,12 +22,47 @@ class _RegisterState extends State<Register> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextButton(
-                    onPressed: () {}, child: Text("Teléfono".toUpperCase())),
-                TextButton(
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  decoration: const BoxDecoration(
+                      border: Border(
+                          bottom: BorderSide(width: 2, color: Colors.black))),
+                  child: TextButton(
                     onPressed: () {},
-                    child: Text("Correo electrónico".toUpperCase()))
+                    child: Text("Teléfono".toUpperCase(),
+                        style: const TextStyle(color: Colors.black)),
+                    style: ButtonStyle(
+                        overlayColor:
+                            MaterialStateProperty.all((Colors.transparent))),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  decoration: const BoxDecoration(
+                      border: Border(
+                          bottom: BorderSide(width: 1, color: Colors.grey))),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text("Correo Electrónico".toUpperCase(),
+                        style: const TextStyle(color: Colors.grey)),
+                    style: ButtonStyle(
+                        overlayColor:
+                            MaterialStateProperty.all((Colors.transparent))),
+                  ),
+                ),
               ],
+            ),
+            Container(
+              margin: const EdgeInsets.all(20),
+              child: IntlPhoneField(
+                decoration: const InputDecoration(
+                  labelText: 'Teléfono',
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(),
+                  ),
+                ),
+                initialCountryCode: 'ES',
+              ),
             )
           ],
         ),
