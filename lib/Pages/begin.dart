@@ -20,7 +20,10 @@ class Begin extends StatelessWidget {
               height: 50,
               margin: const EdgeInsets.symmetric(horizontal: 20),
               child: ElevatedButton(
-                  onPressed: () {}, child: const Text("Crear cuenta nueva")),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed("/Register");
+                  },
+                  child: const Text("Crear cuenta nueva")),
             ),
             TextButton(onPressed: () {}, child: const Text("Entrar"))
           ],
