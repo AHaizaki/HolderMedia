@@ -63,6 +63,15 @@ class _RegisterState extends State<Register> {
                 ),
                 initialCountryCode: 'ES',
               ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              height: 50,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text("Siguiente"),
+              ),
             )
           ],
         ),
